@@ -1,2 +1,24 @@
-<p>{{ fruit }}</p>
+<!-- <p>{{ fruit }}</p>
+<input type="text" [value]="fullName"> -->
+
+<p [style.font-weight]="fontWeight" [style.font-size]="fontSize">{{ fruit }}</p>
 <input type="text" [value]="fullName">
+
+<table class="table table-primary">
+  <thead>
+      <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>Quantity</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class="table table-primary" *ngFor="let fruit1 of fruits; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ fruit1.name | titlecase }}</td>
+          <td>{{ fruit1.quantity | number:'1.1-3' }}</td>
+      </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-success" (click)="testClick()">Test Click</button>
