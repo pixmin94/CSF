@@ -9,10 +9,12 @@
     </div>
     <div class="row">
         <div class="col col-xs-5" *ngIf="leftEnabled">
-            <app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry>
+            <!-- <app-data-entry (numberChanged)="changedNumber($event)"></app-data-entry> -->
+            <app-items-list [inventory]="inventory" (onSelectedItem)="receiveSelectedItem($event)"></app-items-list>
         </div>
         <div class="col col-xs-5" *ngIf="rightEnabled">
-            <app-data-display [numberInput]="updatedNumber"></app-data-display>
+            <!-- <app-data-display [numberInput]="updatedNumber"></app-data-display> -->
+            <app-items-list [inventory]="inventory" (onSelectedItem)="receiveSelectedItem($event)"></app-items-list>
         </div>
     </div>
 </div>
