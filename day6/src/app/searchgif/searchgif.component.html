@@ -1,0 +1,19 @@
+<h1>Search for gifs</h1>
+
+<!-- <form [formGroup]="form" (ngSubmit)="searchGif()">
+  <input type="text" [formControlName]="'value'">
+  <button type="submit">Search</button>
+</form> -->
+
+<input type="text" size="30" #q>
+<button (click)="search()">Search</button>
+
+<div *ngIf="urls.length > 0; else noContent">
+ <div *ngFor="let i of urls">
+  <img src="{{i}}" alt="">
+ </div>
+</div>
+
+<ng-template #noContent>
+  <h2>No Gifs</h2>
+</ng-template>
