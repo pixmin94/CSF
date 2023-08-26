@@ -5,12 +5,12 @@ import { firstValueFrom } from "rxjs";
 
 @Injectable()
 export class OrderService {
-  constructor (private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  submitOrder(order: Order) {
+  submitOrder(order: Order): Promise<any> {
     //maybe need to convert to json??
     return firstValueFrom(
-      this.http.post<any>('/api/order' , order)
+      this.http.post<any>('/api/order' , JSON.stringify(order))
     )
   }
 }

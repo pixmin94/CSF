@@ -1,9 +1,11 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateOrderComponent } from './components/create-order.component';
+import { CreateOrderComponent } from './create-order/create-order.component';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,10 @@ import { CreateOrderComponent } from './components/create-order.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
