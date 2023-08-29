@@ -1,0 +1,41 @@
+<h2>Pizza Factory</h2>
+
+<form [formGroup]="form"  (submit)="submitOrder()">
+  <table>
+    <tr>
+      <td>Name: </td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td><input type="email" formControlName="email"></td>
+      <td><button type="button">List Orders</button></td>
+    </tr>
+    <tr>
+      <td>Size: </td>
+      <td><input type="range" min="6" max="18" value="12" class="slider" formControlName="size"></td>
+    </tr>
+    <!-- <tr>
+      <td>Base: </td>
+      <td>
+        <input type="radio" value="Thin Crust" id="thin">
+        <label for="thin">Thin Crust</label>%nbsp;
+        <input type="radio" value="Thick Crust" id="thick">
+        <label for="thick">Thick Crust</label>
+      </td>
+    </tr> -->
+    <!-- <tr>
+      <td>Toppings: </td>
+      <td><input type="text"></td>
+    </tr> -->
+    <tr>
+      <td>Comments: </td>
+      <td><textarea formControlName="comments"></textarea></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><button type="submit" [disabled]="form.invalid">Place Order</button></td>
+    </tr>
+  </table>
+</form>
