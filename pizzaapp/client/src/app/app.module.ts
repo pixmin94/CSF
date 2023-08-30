@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './component/main.component';
 import { OrdersComponent } from './component/orders.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PizzaService } from './service/pizza.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PizzaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

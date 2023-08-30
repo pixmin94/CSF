@@ -8,8 +8,8 @@
     </tr>
     <tr>
       <td>Email: </td>
-      <td><input type="email" formControlName="email"></td>
-      <td><button type="button">List Orders</button></td>
+      <td><input type="email" formControlName="email" [(ngModel)]="email"></td>
+      <td><button type="button" [disabled]="!email">List Orders</button></td>
     </tr>
     <tr>
       <td>Size: </td>
