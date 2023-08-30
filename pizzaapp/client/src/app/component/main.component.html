@@ -9,7 +9,7 @@
     <tr>
       <td>Email: </td>
       <td><input type="email" formControlName="email" [(ngModel)]="email"></td>
-      <td><button type="button" [disabled]="!email">List Orders</button></td>
+      <td><button type="button" [disabled]="!email" (click)="toOrders()">List Orders</button></td>
     </tr>
     <tr>
       <td>Size: </td>

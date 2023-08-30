@@ -7,6 +7,10 @@ import { Order } from "../models";
 export class PizzaService {
   constructor(private http: HttpClient) { }
 
+  getOrders(email: string): Observable<Order[]> {
+    return this.http.get<Order[]>('/api/order/'+email+'/all')
+  }
+
   createOrder(order: Order): Promise<any> {
     // console.log(order)
     // const order: Order = {

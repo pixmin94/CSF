@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Order } from './../models';
 import { PizzaService } from './../service/pizza.service';
@@ -15,7 +16,8 @@ export class MainComponent implements OnInit {
   sub!: Subscription
 
   constructor(private fb: FormBuilder,
-              private service: PizzaService) {}
+              private service: PizzaService,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.form = this.createForm()
@@ -32,11 +34,15 @@ export class MainComponent implements OnInit {
     //   })
   }
 
+  toOrders() {
+    this.router.navigate(['orders', this.email])
+  }
+
   createForm() {
     return this.fb.group({
           name: this.fb.control<string>('', [ Validators.required, Validators.minLength(3) ]),
-          email: this.fb.control<string>('', [ Validators.email]),
-          size: this.fb.control<number>(12, [Validators.required]),
+          email: this.fb.control<string>('', [ Validators.required, Validators.email]),
+          size: this.fb.control<number>(12, [ Validators.required ]),
           // base: this.fb.control<string>('', [Validators.required]),
           comments: this.fb.control<string>('')
         })

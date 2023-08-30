@@ -28,7 +28,7 @@ public class OrderController {
     @GetMapping(path="/order/{email}/all")
     public ResponseEntity<List<Order>> getOrders(@PathVariable String email) {
         List<Order> orders = service.getOrders();
-        // System.out.println(email);
+        System.out.println(email);
         // System.out.println(orders);
         return ResponseEntity
                 .status(HttpStatus.OK)
